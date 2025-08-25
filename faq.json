@@ -1,0 +1,214 @@
+[
+  {
+    "q": "Apakah ada panduan penggunaan Siakadu?",
+    "a": "Panduan penggunaan Siakadu bisa diunduh di halaman Siakadu sesuai dengan peran pengguna (mahasiswa, dosen, tendik)."
+  },
+  {
+    "q": "Tidak bisa login padahal username dan password sudah benar.",
+    "a": "Coba login menggunakan browser lain, misalnya Google Chrome atau Mozilla Firefox."
+  },
+  {
+    "q": "Lupa password Siakadu.",
+    "a": "Klik 'Lupa Password' di halaman login Siakadu. Jika tidak berhasil, kirim email ke sarana.pendidikan@kpa.unila.ac.id dengan subject Reset Password Mahasiswa/Dosen, sertakan scan identitas (KTM/KTP). Panduan video: https://youtu.be/0VHu7vN8j8E"
+  },
+  {
+    "q": "Mahasiswa tidak bisa melihat nilai dari dosen.",
+    "a": "Laporkan masalah dengan data lengkap, misalnya nama, NPM, mata kuliah, semester, dan nama dosen. Contoh: Mahasiswa Fulan (NPM 2017051xxx) tidak bisa melihat nilai Komunikasi Sosial semester ganjil 2020/2021 dari dosen Ibu Fulanah."
+  },
+  {
+    "q": "Bagaimana orang tua bisa mengakses Siakadu?",
+    "a": "Akses untuk orang tua melibatkan mahasiswa dan admin prodi/jurusan. Panduan video: https://youtu.be/1dfoRhZ94fM"
+  },
+  {
+    "q": "Dimana bisa download aplikasi Siakadu Android?",
+    "a": "Aplikasi Android Siakadu bisa diunduh di sini: https://siakadu.unila.ac.id/dwijim/jalanjalan/Siakad_Universitas_Lampungid.co.unila.academicv1.2.apk"
+  },
+  {
+    "q": "Status mahasiswa cekal/tidak aktif karena ada tagihan keuangan.",
+    "a": "Datang ke BAK Rektorat lantai 1 dengan bukti pembayaran, atau kirim email ke sarana.pendidikan@kpa.unila.ac.id dengan scan bukti pembayaran."
+  },
+  {
+    "q": "Predikat kelulusan tidak sesuai (harusnya pujian tapi hanya sangat memuaskan).",
+    "a": "Kemungkinan KRS semester berikut masih tergenerate meskipun sudah lulus. Hubungi BAK Unila untuk perbaikan."
+  },
+  {
+    "q": "Mahasiswa baru semester 1 statusnya CEKAL.",
+    "a": "Normal. Proses validasi pembayaran UKT/SPP oleh BAK untuk mahasiswa baru masih berlangsung. Tunggu proses selesai."
+  },
+  {
+    "q": "Nama sekolah asal tidak muncul di Siakadu.",
+    "a": "Laporkan NPSN dan nama sekolah ke BAK Unila atau Tim Siakadu. Sertakan juga kontak (telepon/email/website) dan alamat sekolah. Kirim lewat email sarana.pendidikan@kpa.unila.ac.id atau grup Siakadu fakultas di telegram https://t.me/Siakadu_unila."
+  },
+  {
+    "q": "Bagaimana cara mengisi KRS?",
+    "a": "Pastikan status mahasiswa aktif dan bisa login ke Siakadu. Panduan video: https://youtu.be/tbM7ZJw4sCU"
+  },
+  {
+    "q": "Nilai huruf mata kuliah berisi huruf T.",
+    "a": "Dosen belum mengunci nilai untuk mata kuliah tersebut."
+  },
+  {
+    "q": "Nilai huruf tidak muncul padahal teman sudah ada.",
+    "a": "Kemungkinan belum isi kuesioner. Pastikan menekan tombol VALID. Jika terlambat, minta bantuan admin fakultas. Panduan video: https://youtu.be/Zuaf8O8lCkA"
+  },
+  {
+    "q": "Nilai mata kuliah tidak muncul untuk semua mahasiswa.",
+    "a": "Dosen penanggung jawab belum menekan tombol 'Kunci' dan 'Umumkan Nilai'."
+  },
+  {
+    "q": "Nilai hilang meski mahasiswa sudah yudisium dan nomor ijazah keluar.",
+    "a": "Hal ini bisa terjadi karena ada proses pemutihan nilai."
+  },
+  {
+    "q": "IP semester tidak sesuai dengan nilai huruf mutu.",
+    "a": "Hubungi Kaprodi atau Kajur agar menekan tombol 'Hitung Ulang Transkrip'. Panduan video: https://youtu.be/vhY9YZ4_P8Q"
+  },
+  {
+    "q": "Jatah SKS tidak sesuai IP semester.",
+    "a": "Hubungi Kaprodi/Kajur untuk hitung ulang. Aturan: IP ≥ 3.00 → 24 SKS, 2.50–2.99 → 21 SKS, 2.00–2.49 → 18 SKS, 1.50–1.99 → 15 SKS, ≤ 1.49 → 12 SKS."
+  },
+  {
+    "q": "Belum isi KRS padahal jadwal sudah habis.",
+    "a": "Kaprodi/Kajur bisa menambahkan mahasiswa manual ke daftar presensi mata kuliah. Panduan video: https://youtu.be/U4mnsskyXRo"
+  },
+  {
+    "q": "KRS berisi 4 mata kuliah, tapi di monitoring hanya tampil 2.",
+    "a": "Mata kuliah yang tidak muncul berarti jadwal pertemuan mingguan belum dibuat oleh prodi/jurusan."
+  },
+  {
+    "q": "Nilai seminar atau skripsi tidak muncul di transkrip, padahal ada di KHS.",
+    "a": "Dosen penanggung jawab belum mengunci nilai mata kuliah tersebut."
+  },
+  {
+    "q": "Bagaimana cara mengirim tugas di Siakadu?",
+    "a": "Tugas dikirim melalui forum kelas di Siakadu sebelum deadline. Panduan video: https://www.youtube.com/watch?v=Knqj0H7ZRd8"
+  },
+  {
+    "q": "Bagaimana cara memperbaiki KRS setelah jadwal habis?",
+    "a": "Bisa dilakukan lewat admin/sekretaris/kaprodi/kajur. Panduan video: https://youtu.be/U4mnsskyXRo"
+  },
+  {
+    "q": "Status mahasiswa tidak aktif meski sudah isi KRS.",
+    "a": "Terjadi karena pengisian KRS melebihi batas SKS. Perbaiki KRS lewat admin/sekretaris/prodi/jurusan, lalu hubungi BAK via email sarana.pendidikan@kpa.unila.ac.id. Panduan video: https://youtu.be/U4mnsskyXRo"
+  },
+  {
+    "q": "Mata kuliah tidak muncul di Monitor Perkuliahan.",
+    "a": "Kemungkinan jadwal mingguan belum dibuat oleh prodi/jurusan. Hubungi pihak terkait."
+  },
+  {
+    "q": "Mahasiswa lulus IPK > 3.5 dan studi < 4 tahun, tapi predikat hanya sangat memuaskan.",
+    "a": "Selain IPK dan lama studi, syarat predikat adalah ujian komprehensif tidak boleh dilakukan di semester 9. Jika ujian di semester 9, predikat tetap sangat memuaskan."
+  },
+  {
+    "q": "Bagaimana jika tidak punya NISN saat isi biodata?",
+    "a": "Isi kolom NISN dengan angka nol (0) sebanyak 10 digit."
+  },
+  {
+    "q": "Apakah ada grup tanya jawab masalah Siakadu?",
+    "a": "Ada grup Telegram resmi di https://t.me/Siakadu_unila."
+  },
+  {
+    "q": "Tidak bisa cetak biodata mahasiswa untuk daftar wisuda.",
+    "a": "Hubungi BAK via email sarana.pendidikan@kpa.unila.ac.id, atau lewat grup Telegram https://t.me/Siakadu_unila, atau Helpdesk TIK Unila https://helpdesktik.unila.ac.id/"
+  },
+  {
+    "q": "Kelas penuh atau jadwal bentrok saat isi KRS.",
+    "a": "Hubungi Kaprodi/Kajur. Mereka bisa menambah kuota kelas atau memperbaiki jadwal bentrok."
+  },
+  {
+    "q": "Bagaimana cara menggunakan Siakadu untuk mahasiswa baru?",
+    "a": "Panduan video bisa dilihat di https://tik.unila.ac.id/tutorial/"
+  },
+  {
+    "q": "Dosen PJ tidak hadir sesuai jadwal.",
+    "a": "Dosen PJ wajib mengganti hari/tanggal kuliah di hari yang sama."
+  },
+  {
+    "q": "Nilai akhir yang sudah diisi tiba-tiba hilang.",
+    "a": "Terjadi jika dosen mengedit data presensi. Sebaiknya unggah nilai lewat file Excel (.xls) agar tidak perlu input satu per satu."
+  },
+  {
+    "q": "Kelas sudah dijadwal tapi tidak muncul di daftar dosen.",
+    "a": "Dosen masih menggunakan data dengan NIP lama."
+  },
+  {
+    "q": "Huruf mutu berbeda antara dosen dan Siakadu.",
+    "a": "Terjadi karena skala nilai dosen berbeda dengan skala nilai yang digunakan BAK di Siakadu."
+  },
+  {
+    "q": "Bagaimana cara presensi kuliah?",
+    "a": "Dosen menampilkan QR Code via Zoom atau Google Meet. Mahasiswa scan QR Code lewat aplikasi Android Siakadu. Panduan video: https://youtu.be/UB_ePZKq38o"
+  },
+  {
+    "q": "KRS sudah diisi mahasiswa, tapi dosen tidak bisa melihat mata kuliah atau mahasiswa.",
+    "a": "Kemungkinan data dosen di jadwal masih pakai NIP lama. Harus diperbarui ke NIP baru."
+  },
+  {
+    "q": "Panduan pengisian nilai di Siakadu.",
+    "a": "Panduan video: https://youtu.be/1dOssyX-ayo"
+  },
+  {
+    "q": "Dosen PJ tidak bisa upload RPS.",
+    "a": "Menu upload RPS ada di menu lain. Panduan video: https://youtu.be/Lem5A6zhTP0"
+  },
+  {
+    "q": "Dosen PJ tidak bisa memperbaiki jadwal kuliah.",
+    "a": "Hanya role Dosen dan Admin Prodi/Kaprodi yang bisa. Panduan video: https://youtu.be/PqhwgP8eXqI"
+  },
+  {
+    "q": "Bagaimana cara membuat tugas di Siakadu?",
+    "a": "Tugas dibuat melalui menu tugas di dalam kelas pada Siakadu."
+  },
+  {
+    "q": "Bagaimana menghitung jumlah pertemuan kuliah/praktikum?",
+    "a": "Jumlah pertemuan dicatat dalam Siakadu dan berpengaruh ke remunerasi. Panduan video: https://youtu.be/HDQQMowv3i0"
+  },
+  {
+    "q": "Nomor HP tidak menerima OTP dari Siakadu.",
+    "a": "Coba kirim SMS dari nomor lain, restart HP, lalu coba lagi. Jika masih gagal, ganti nomor HP di Siakadu dengan nomor lain."
+  },
+  {
+    "q": "Mengapa template nilai di Excel kosong atau tidak sesuai komposisi?",
+    "a": "Kemungkinan salah klik tombol. Gunakan tombol 'Kosongkan Komposisi', bukan 'Reset Komposisi'."
+  },
+  {
+    "q": "Dosen tidak bisa menambah mahasiswa PA.",
+    "a": "Kuota PA dosen kosong atau sudah penuh. Kuota bisa ditentukan di menu Portal → Pegawai → Pembimbing → Kuota."
+  },
+  {
+    "q": "Bagaimana penjadwalan mata kuliah dengan kurikulum berbeda?",
+    "a": "Belum ada jawaban."
+  },
+  {
+    "q": "Bagaimana reset jadwal kuliah lama dan ganti dengan jadwal baru?",
+    "a": "Pada menu Penjadwalan, jadwal bisa dihapus semua atau dipilih sebagian dengan tanda centang."
+  },
+  {
+    "q": "KRS mahasiswa tidak bisa divalidasi.",
+    "a": "Terjadi karena status mahasiswa sudah 'Selesai'. Ubah status ke 'Belum Selesai', validasi KRS, lalu ubah kembali ke 'Selesai'."
+  },
+  {
+    "q": "Jadwal mata kuliah dengan peserta 0 tidak bisa dihapus.",
+    "a": "Penyebab: (1) jadwal sudah ada pertemuan dari awal hingga akhir, atau (2) dosen sudah mengisi forum. Hapus jadwal pertemuan dan forum dulu, baru jadwal bisa dihapus."
+  },
+  {
+    "q": "Bagaimana cara menambah kuota PA atau pembimbing skripsi?",
+    "a": "Buka Portal-Pegawai, cari nama dosen, lalu edit tab Pembimbing. Tambah kuota PA dan bimbingan skripsi di sana."
+  },
+  {
+    "q": "Mahasiswa tidak bisa ditambahkan ke PA dosen.",
+    "a": "KRS mahasiswa sudah divalidasi. Cabut validasi KRS dulu, baru mahasiswa bisa ditambahkan ke PA."
+  },
+  {
+    "q": "Bagaimana jika mahasiswa belum isi KRS setelah jadwal habis?",
+    "a": "Bisa dilakukan lewat admin/sekretaris/kaprodi/kajur. Panduan video: https://youtu.be/U4mnsskyXRo"
+  },
+  {
+    "q": "Bagaimana jika ada perubahan dosen penanggung jawab mata kuliah?",
+    "a": "Perubahan bisa dilakukan lewat admin/sekretaris/kaprodi/kajur. Panduan video: https://youtu.be/rWsOzHwdbV8"
+  },
+  {
+    "q": "Bagaimana jika pembimbing akademik mahasiswa harus diganti karena dosen purna tugas?",
+    "a": "Perubahan dilakukan lewat kaprodi/jurusan melalui menu Perkuliahan → Administrasi → Pembimbing Akademik. Panduan video: https://youtu.be/U89YpYH7wtQ"
+  }
+]
