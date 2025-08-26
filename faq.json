@@ -60,11 +60,11 @@
     "a": "Hal ini bisa terjadi karena ada proses pemutihan nilai."
   },
   {
-    "q": "IP semester tidak sesuai dengan nilai huruf mutu.",
+    "q": "IPS (IP semester) tidak sesuai dengan nilai huruf mutu.",
     "a": "Hubungi Kaprodi atau Kajur agar menekan tombol 'Hitung Ulang Transkrip'. Panduan video: https://youtu.be/vhY9YZ4_P8Q"
   },
   {
-    "q": "Jatah SKS tidak sesuai IP semester.",
+    "q": "Jatah SKS tidak sesuai IPS (IP semester).",
     "a": "Hubungi Kaprodi/Kajur untuk hitung ulang. Aturan: IP ≥ 3.00 → 24 SKS, 2.50–2.99 → 21 SKS, 2.00–2.49 → 18 SKS, 1.50–1.99 → 15 SKS, ≤ 1.49 → 12 SKS."
   },
   {
