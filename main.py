@@ -1,8 +1,24 @@
 import json
+import os
 
 import faiss
+from dotenv import load_dotenv
 from llama_cpp import Llama
 from sentence_transformers import SentenceTransformer
+from telegram import Update
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes,
+    MessageHandler,
+    filters,
+)
+
+# -----------------------------
+# 0. Load env
+# -----------------------------
+load_dotenv()
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # -----------------------------
 # 1. Load FAQ dari JSON
@@ -57,7 +73,7 @@ Pertanyaan user:
 Jawaban singkat, jelas, sopan dan sesuai FAQ:
 """
         output = llm(
-            prompt, max_tokens=200, stop=["User:", "FAQ:", "Remember:", "Note:"]
+            prompt, max_tokens=200, stop=["User:", "FAQ:", "Note:", "Remember:"]
         )
         return output["choices"][0]["text"].strip()
     else:
@@ -65,13 +81,39 @@ Jawaban singkat, jelas, sopan dan sesuai FAQ:
 
 
 # -----------------------------
-# 5. Demo interaktif
+# 5. Telegram Handlers
 # -----------------------------
+async def start(update: Update, _context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Halo 👋, saya adalah bot FAQ Siakadu. Silakan tanya saya di sini!"
+    )
+
+
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = update.message.text
+
+    # Jika di grup → hanya jawab kalau mention @siakadu_bot
+    if update.message.chat.type in ["group", "supergroup"]:
+        if f"@{context.bot.username}" not in text:
+            return  # tidak menjawab kalau tidak di-mention
+        text = text.replace(f"@{context.bot.username}", "").strip()
+
+    response = chatbot(text)
+    await update.message.reply_text(response)
+
+
+# -----------------------------
+# 6. Main
+# -----------------------------
+def main():
+    app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+
+    print("🤖 Bot siap jalan...")
+    app.run_polling()
+
+
 if __name__ == "__main__":
-    print("🤖 Chatbot FAQ Siakadu (ketik 'exit' untuk keluar)")
-    while True:
-        user_input = input("User: ")
-        if user_input.lower() in ["exit", "quit"]:
-            break
-        response = chatbot(user_input)
-        print("Bot :", response)
+    main()

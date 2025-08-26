@@ -1,5 +1,5 @@
-# Models
-models/
+# Environtment variables
+.env
 
 # Python-generated files
 __pycache__/
