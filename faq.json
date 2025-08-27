@@ -210,5 +210,29 @@
   {
     "q": "Bagaimana jika pembimbing akademik mahasiswa harus diganti karena dosen purna tugas?",
     "a": "Perubahan dilakukan lewat kaprodi/jurusan melalui menu Perkuliahan → Administrasi → Pembimbing Akademik. Panduan video: https://youtu.be/U89YpYH7wtQ"
+  },
+  {
+    "q": "Saya alumni ingin mengakses Siakadu kembali, tetapi status pengguna sudah Tidak Aktif. Bagaimana solusinya?",
+    "a": "Mahasiswa yang sudah lulus memang tidak diberikan lagi hak akses ke Siakadu. Itu adalah kebijakan yang berlaku. Terima kasih."
+  },
+  {
+    "q": "Mengapa saya tidak bisa login ke Siakadu dan muncul keterangan 'Status Pengguna Tidak Aktif'?",
+    "a": "Status pengguna bisa menjadi tidak aktif jika sudah mendaftar yudisium atau terdaftar sebagai peserta wisuda. Silakan konfirmasi ke admin jurusan apakah Anda sudah didaftarkan wisuda. Jika sudah, akses login ke Siakadu memang akan ditutup."
+  },
+  {
+    "q": "Saya tidak bisa login ke SSO dan VClass, bagaimana solusinya?",
+    "a": "Jika tidak bisa login ke SSO, silakan hubungi Helpdesk TIK melalui https://helpdesktik.unila.ac.id/. Biasanya jika SSO sudah bisa diakses, login ke VClass juga normal kembali. Namun, jika masalah login ke VClass masih berlanjut, silakan hubungi LP3M di Rektorat Unila lantai 4."
+  },
+  {
+    "q": "Mengapa nilai saya belum muncul di KHS padahal saya sudah mengisi kuesioner?",
+    "a": "Sering terjadi mahasiswa sudah mengisi kuesioner tetapi lupa mencontreng bagian 'Valid'. Jika 'Valid' tidak dipilih, sistem menganggap kuesioner belum lengkap sehingga nilai belum masuk ke KHS."
+  },
+  {
+    "q": "Kenapa email mahasiswa dengan domain students.unila.ac.id tidak bisa diakses?",
+    "a": "Untuk pengaduan masalah terkait sistem informasi, termasuk email mahasiswa, silakan mengunjungi Helpdesk TIK Unila di https://helpdesktik.unila.ac.id"
+  },
+  {
+    "q": "KRS saya tidak bisa diisi karena ada keterangan tagihan belum dibayar, padahal saya sudah membayar. Apa yang harus saya lakukan?",
+    "a": "Mahasiswa dapat datang langsung ke BAK Lantai I Rektorat dengan membawa bukti dan salinan pembayaran. Alternatif lain, silakan kirim email ke sarana.pendidikan@kpa.unila.ac.id dengan menyertakan scan bukti pembayaran."
   }
 ]
