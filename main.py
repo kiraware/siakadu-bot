@@ -50,6 +50,7 @@ def chatbot(query: str) -> str:
     distances, indices = index.search(query_emb, k=1)
 
     best_match = faq_data[indices[0][0]]
+    faq_question = best_match["q"].strip()
     faq_answer = best_match["a"].strip()
     distance = distances[0][0]
 
@@ -57,10 +58,14 @@ def chatbot(query: str) -> str:
     threshold = 0.9  # makin kecil makin ketat
 
     print(f"Distance: {distance:.3f}")
-    print(f"Match: {best_match['q']}\nAnswer: {faq_answer}\nQuery: {query}")
+    print(f"Match: {faq_question}\nAnswer: {faq_answer}\nQuery: {query}")
 
     if distance < threshold:
-        return faq_answer
+        return (
+            f'Berdasarkan pertanyaan Anda: "{query}"\n\n'
+            f'Ini mirip dengan yang ada di FAQ untuk pertanyaan:\n"{faq_question}"\n\n'
+            f"Sehingga jawaban untuk pertanyaan Anda adalah:\n{faq_answer}"
+        )
     else:
         return "Maaf, saya hanya bisa menjawab pertanyaan seputar FAQ yang tersedia."
 
