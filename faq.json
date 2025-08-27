@@ -246,5 +246,9 @@
   {
     "q": "Apakah mengklik tombol 'edit' pada form biodata di Siakadu yang sudah divalidasi oleh fakultas akan mempengaruhi data saya atau menghambat proses kelulusan?",
     "a": "Tidak masalah. Yang terpenting biodata sudah diisi dengan benar."
+  },
+  {
+    "q": "Saya lupa password SSO, bagaimana cara meresetnya? Apakah harus ke TIK langsung?",
+    "a": "Anda dapat mengajukan layanan reset password SSO melalui https://helpdesktik.unila.ac.id/"
   }
 ]
