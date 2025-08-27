@@ -29,10 +29,13 @@ with open("faq.json", encoding="utf-8") as f:
 # -----------------------------
 # 2. Load embedding model
 # -----------------------------
-embed_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
+embed_model = SentenceTransformer("intfloat/multilingual-e5-large")
 
-faq_questions = [item["q"] for item in faq_data]
-faq_embeddings = embed_model.encode(faq_questions, convert_to_numpy=True)
+# E5 perlu prefix "passage: " untuk dokumen
+faq_questions = [f"passage: {item['q']}" for item in faq_data]
+faq_embeddings = embed_model.encode(
+    faq_questions, convert_to_numpy=True, normalize_embeddings=True
+)
 
 dimension = faq_embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
@@ -54,13 +57,29 @@ llm = Llama.from_pretrained(
 # 4. Chatbot function
 # -----------------------------
 def chatbot(query: str) -> str:
-    query_emb = embed_model.encode([query], convert_to_numpy=True)
+    # E5 perlu prefix "query: " untuk pertanyaan user
+    query_emb = embed_model.encode(
+        [f"query: {query}"], convert_to_numpy=True, normalize_embeddings=True
+    )
     distances, indices = index.search(query_emb, k=1)
 
     best_match = faq_data[indices[0][0]]
     faq_answer = best_match["a"].strip()
+    distance = distances[0][0]
 
-    if distances[0][0] < 0.7:
+    # Thresholds (lebih ketat)
+    low_threshold = 0.2  # sangat mirip → langsung FAQ
+    high_threshold = 0.4  # di atas ini dianggap tidak relevan
+
+    print(f"Distance: {distance:.3f}")
+    print(f"Match: {best_match['q']}\nAnswer: {faq_answer}\nQuery: {query}")
+
+    if distance < low_threshold:
+        # ✅ langsung jawab dari FAQ tanpa LLaMA
+        return faq_answer
+
+    elif distance < high_threshold:
+        # 🤖 mirip tapi tidak identik → biar LLaMA rapikan jawabannya
         prompt = f"""
 Anda adalah asisten Siakadu. Jawablah pertanyaan user hanya berdasarkan FAQ berikut:
 
@@ -76,7 +95,9 @@ Jawaban singkat, jelas, sopan dan sesuai FAQ:
             prompt, max_tokens=200, stop=["User:", "FAQ:", "Note:", "Remember:"]
         )
         return output["choices"][0]["text"].strip()
+
     else:
+        # ❌ tidak mirip → fallback
         return "Maaf, saya hanya bisa menjawab pertanyaan seputar FAQ yang tersedia."
 
 
