@@ -56,7 +56,7 @@ def chatbot(query: str) -> str:
     distance = distances[0][0]
 
     # Thresholds
-    threshold = 0.35  # makin kecil makin ketat
+    threshold = 0.2  # makin kecil makin ketat
 
     print(f"Distance: {distance:.3f}")
     print(f"Match: {best_match['q']}\nAnswer: {faq_answer}\nQuery: {query}")
