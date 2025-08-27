@@ -3,7 +3,6 @@ import os
 
 import faiss
 from dotenv import load_dotenv
-from llama_cpp import Llama
 from sentence_transformers import SentenceTransformer
 from telegram import Update
 from telegram.ext import (
@@ -41,20 +40,9 @@ dimension = faq_embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(faq_embeddings)
 
-# -----------------------------
-# 3. Load LLaMA 3
-# -----------------------------
-llm = Llama.from_pretrained(
-    repo_id="bartowski/Meta-Llama-3-8B-Instruct-GGUF",
-    filename="Meta-Llama-3-8B-Instruct-Q4_K_M.gguf",
-    n_ctx=4096,  # panjang konteks
-    n_threads=4,  # sesuaikan CPU
-    n_gpu_layers=0,
-)
-
 
 # -----------------------------
-# 4. Chatbot function
+# 3. Chatbot function
 # -----------------------------
 def chatbot(query: str) -> str:
     # E5 perlu prefix "query: " untuk pertanyaan user
@@ -67,42 +55,20 @@ def chatbot(query: str) -> str:
     faq_answer = best_match["a"].strip()
     distance = distances[0][0]
 
-    # Thresholds (lebih ketat)
-    low_threshold = 0.2  # sangat mirip → langsung FAQ
-    high_threshold = 0.4  # di atas ini dianggap tidak relevan
+    # Thresholds
+    threshold = 0.35  # makin kecil makin ketat
 
     print(f"Distance: {distance:.3f}")
     print(f"Match: {best_match['q']}\nAnswer: {faq_answer}\nQuery: {query}")
 
-    if distance < low_threshold:
-        # ✅ langsung jawab dari FAQ tanpa LLaMA
+    if distance < threshold:
         return faq_answer
-
-    elif distance < high_threshold:
-        # 🤖 mirip tapi tidak identik → biar LLaMA rapikan jawabannya
-        prompt = f"""
-Anda adalah asisten Siakadu. Jawablah pertanyaan user hanya berdasarkan FAQ berikut:
-
-FAQ:
-{faq_answer}
-
-Pertanyaan user:
-{query}
-
-Jawaban singkat, jelas, sopan dan sesuai FAQ:
-"""
-        output = llm(
-            prompt, max_tokens=200, stop=["User:", "FAQ:", "Note:", "Remember:"]
-        )
-        return output["choices"][0]["text"].strip()
-
     else:
-        # ❌ tidak mirip → fallback
         return "Maaf, saya hanya bisa menjawab pertanyaan seputar FAQ yang tersedia."
 
 
 # -----------------------------
-# 5. Telegram Handlers
+# 4. Telegram Handlers
 # -----------------------------
 async def start(update: Update, _context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
@@ -124,7 +90,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # -----------------------------
-# 6. Main
+# 5. Main
 # -----------------------------
 def main():
     app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
