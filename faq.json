@@ -234,5 +234,9 @@
   {
     "q": "KRS saya tidak bisa diisi karena ada keterangan tagihan belum dibayar, padahal saya sudah membayar. Apa yang harus saya lakukan?",
     "a": "Mahasiswa dapat datang langsung ke BAK Lantai I Rektorat dengan membawa bukti dan salinan pembayaran. Alternatif lain, silakan kirim email ke sarana.pendidikan@kpa.unila.ac.id dengan menyertakan scan bukti pembayaran."
+  },
+  {
+    "q": "Saya tidak bisa login ke Siakadu, padahal NPM dan password sudah benar tetapi muncul tulisan 'Akun pengguna atau Kata sandi anda tidak sesuai'. Apa solusinya?",
+    "a": "Silakan datang ke loket BAK Rektorat lantai 1 (loket 1, 2, atau 3) dengan membawa KTM."
   }
 ]
