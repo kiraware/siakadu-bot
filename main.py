@@ -28,10 +28,9 @@ with open("faq.json", encoding="utf-8") as f:
 # -----------------------------
 # 2. Load embedding model
 # -----------------------------
-embed_model = SentenceTransformer("intfloat/multilingual-e5-large")
+embed_model = SentenceTransformer("BAAI/bge-m3")
 
-# E5 perlu prefix "passage: " untuk dokumen
-faq_questions = [f"passage: {item['q']}" for item in faq_data]
+faq_questions = [item["q"] for item in faq_data]
 faq_embeddings = embed_model.encode(
     faq_questions, convert_to_numpy=True, normalize_embeddings=True
 )
@@ -45,9 +44,8 @@ index.add(faq_embeddings)
 # 3. Chatbot function
 # -----------------------------
 def chatbot(query: str) -> str:
-    # E5 perlu prefix "query: " untuk pertanyaan user
     query_emb = embed_model.encode(
-        [f"query: {query}"], convert_to_numpy=True, normalize_embeddings=True
+        [query], convert_to_numpy=True, normalize_embeddings=True
     )
     distances, indices = index.search(query_emb, k=1)
 
@@ -56,7 +54,7 @@ def chatbot(query: str) -> str:
     distance = distances[0][0]
 
     # Thresholds
-    threshold = 0.2  # makin kecil makin ketat
+    threshold = 0.9  # makin kecil makin ketat
 
     print(f"Distance: {distance:.3f}")
     print(f"Match: {best_match['q']}\nAnswer: {faq_answer}\nQuery: {query}")
