@@ -5,6 +5,22 @@ Bot ini menggunakan **sentence-transformers (BAAI/bge-m3)** untuk pencocokan per
 
 ---
 
+## ​ Sumber Data FAQ
+
+Data FAQ dalam `faq.json` di sini dikumpulkan dan diproses dari dua sumber utama:
+
+1. **Blog Dwi Sakethi – “Pertanyaan dan Jawaban (PdJ) Siakadu”**  
+   Sumber FAQ resmi dari Universitas Lampung ini menyediakan berbagai pertanyaan umum beserta solusinya terkait sistem Siakadu.  
+   [Laman situs](https://dosen.unila.ac.id/0011066803/2020/09/26/frequently-asked-questions-faq-siakadu/)
+
+2. **Percakapan di Grup Telegram Siakadu Unila**  
+   Dialog dari grup ini (yang aktif mendiskusikan masalah Siakadu) turut digunakan sebagai sumber data tambahan untuk memperkaya FAQ dengan kasus nyata dan solusinya.  
+   [Grup Telegram](https://t.me/siakadu_unila)
+
+Kami menyatukan kedua sumber ini dan menyusunnya dalam format FAQ yang mudah di-query oleh chatbot, sehingga bot dapat menjawab secara akurat dan sesuai konteks.
+
+---
+
 ## ✨ Fitur
 
 - Jawaban otomatis berdasarkan file `faq.json`.
