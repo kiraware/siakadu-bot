@@ -1,7 +1,7 @@
 [project]
 name = "siakadu-bot"
 version = "0.1.0"
-description = "Add your description here"
+description = "Telegram chatbot FAQ untuk membantu mahasiswa Universitas Lampung mengakses informasi Siakadu menggunakan semantic search (BGE-M3 + FAISS)."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
