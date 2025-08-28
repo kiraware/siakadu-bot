@@ -37,7 +37,7 @@
   },
   {
     "q": "Nama sekolah asal tidak muncul di Siakadu.",
-    "a": "Laporkan NPSN dan nama sekolah ke BAK Unila atau Tim Siakadu. Sertakan juga kontak (telepon/email/website) dan alamat sekolah. Kirim lewat email sarana.pendidikan@kpa.unila.ac.id atau grup Siakadu fakultas di telegram https://t.me/Siakadu_unila."
+    "a": "Laporkan NPSN dan nama sekolah ke BAK Unila atau Tim Siakadu. Sertakan juga kontak (telepon/email/website) dan alamat sekolah. Kirim lewat email sarana.pendidikan@kpa.unila.ac.id atau grup Siakadu fakultas di telegram https://t.me/siakadu_unila."
   },
   {
     "q": "Bagaimana cara mengisi KRS?",
@@ -105,11 +105,11 @@
   },
   {
     "q": "Apakah ada grup tanya jawab masalah Siakadu?",
-    "a": "Ada grup Telegram resmi di https://t.me/Siakadu_unila."
+    "a": "Ada grup Telegram resmi di https://t.me/siakadu_unila."
   },
   {
     "q": "Tidak bisa cetak biodata mahasiswa untuk daftar wisuda.",
-    "a": "Hubungi BAK via email sarana.pendidikan@kpa.unila.ac.id, atau lewat grup Telegram https://t.me/Siakadu_unila, atau Helpdesk TIK Unila https://helpdesktik.unila.ac.id/"
+    "a": "Hubungi BAK via email sarana.pendidikan@kpa.unila.ac.id, atau lewat grup Telegram https://t.me/siakadu_unila, atau Helpdesk TIK Unila https://helpdesktik.unila.ac.id/"
   },
   {
     "q": "Kelas penuh atau jadwal bentrok saat isi KRS.",
@@ -250,5 +250,13 @@
   {
     "q": "Saya lupa password SSO, bagaimana cara meresetnya? Apakah harus ke TIK langsung?",
     "a": "Anda dapat mengajukan layanan reset password SSO melalui https://helpdesktik.unila.ac.id/"
+  },
+  {
+    "q": "Mengapa nama dosen pembimbing akademik saya tidak muncul di Siakadu?",
+    "a": "Silakan menghubungi Kaprodi atau Kajur di Fakultas untuk menanyakan data pembimbing akademik Anda."
+  },
+  {
+    "q": "Di mana saya bisa menemukan tutorial penggunaan Siakadu untuk mahasiswa?",
+    "a": "Tutorial penggunaan Siakadu dapat diakses melalui laman https://tik.unila.ac.id/tutorial/."
   }
 ]
