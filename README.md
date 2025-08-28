@@ -5,7 +5,7 @@ Bot ini menggunakan **sentence-transformers (BAAI/bge-m3)** untuk pencocokan per
 
 ---
 
-## ​ Sumber Data FAQ
+## ​ 📚 Sumber Data FAQ
 
 Data FAQ dalam `faq.json` di sini dikumpulkan dan diproses dari dua sumber utama:
 
