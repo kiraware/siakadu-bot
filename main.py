@@ -2,6 +2,7 @@ import json
 import os
 
 import faiss
+import numpy as np
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from telegram import Update
@@ -30,13 +31,13 @@ with open("faq.json", encoding="utf-8") as f:
 # -----------------------------
 embed_model = SentenceTransformer("BAAI/bge-m3")
 
+# Encode FAQ questions dan normalisasi untuk cosine similarity
 faq_questions = [item["q"] for item in faq_data]
-faq_embeddings = embed_model.encode(
-    faq_questions, convert_to_numpy=True, normalize_embeddings=True
-)
+faq_embeddings = embed_model.encode(faq_questions, convert_to_numpy=True)
+faq_embeddings = faq_embeddings / np.linalg.norm(faq_embeddings, axis=1, keepdims=True)
 
 dimension = faq_embeddings.shape[1]
-index = faiss.IndexFlatL2(dimension)
+index = faiss.IndexFlatIP(dimension)
 index.add(faq_embeddings)
 
 
@@ -44,30 +45,34 @@ index.add(faq_embeddings)
 # 3. Chatbot function
 # -----------------------------
 def chatbot(query: str) -> str:
-    query_emb = embed_model.encode(
-        [query], convert_to_numpy=True, normalize_embeddings=True
-    )
-    distances, indices = index.search(query_emb, k=1)
+    query_emb = embed_model.encode([query], convert_to_numpy=True)
+    query_emb = query_emb / np.linalg.norm(query_emb, axis=1, keepdims=True)
+
+    scores, indices = index.search(query_emb, k=1)
 
     best_match = faq_data[indices[0][0]]
     faq_question = best_match["q"].strip()
     faq_answer = best_match["a"].strip()
-    distance = distances[0][0]
+    similarity = scores[0][0]  # makin tinggi makin mirip (0–1)
 
     # Thresholds
-    threshold = 0.9  # makin kecil makin ketat
+    high = 0.8  # sangat mirip → langsung jawab
+    low = 0.6  # mirip sedang → kasih keterangan
+    # < low dianggap tidak relevan
 
-    print(f"Distance: {distance:.3f}")
+    print(f"Similarity: {similarity:.3f}")
     print(f"Match: {faq_question}\nAnswer: {faq_answer}\nQuery: {query}")
 
-    if distance < threshold:
+    if similarity > high:
+        return faq_answer
+    elif similarity > low:
         return (
             f'Berdasarkan pertanyaan Anda: "{query}"\n\n'
-            f'Ini mirip dengan yang ada di FAQ untuk pertanyaan:\n"{faq_question}"\n\n'
-            f"Sehingga jawaban untuk pertanyaan Anda adalah:\n{faq_answer}"
+            f'Pertanyaan ini mirip dengan FAQ berikut:\n"{faq_question}"\n\n'
+            f"Jawaban: {faq_answer}"
         )
     else:
-        return "Maaf, saya hanya bisa menjawab pertanyaan seputar FAQ yang tersedia."
+        return "Maaf, saya tidak menemukan jawaban yang relevan di FAQ."
 
 
 # -----------------------------
